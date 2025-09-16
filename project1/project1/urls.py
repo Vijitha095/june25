@@ -20,5 +20,7 @@ from app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.HomeView.as_view())
+    path('',views.HomeView.as_view(),name="home_view"),
+    path('reg',views.StudentRegister.as_view(),name="register_view"),
+    path('delete/<int:id>',views.DeleteStudent.as_view(),name="delete_student")
 ]

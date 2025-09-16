@@ -21,7 +21,7 @@
 
     <title>Hello, world!</title>
   </head>
-  <body class="d-flex vw-100 vh-100 align-items-center justify-content-center">
+  <body class="d-flex flex-column vw-100 vh-100 align-items-center justify-content-center">
     
 
     <table class="table table-bordered">
@@ -31,6 +31,7 @@
             <th>AGE</th>
             <th>PLACE</th>
             <th>EMAIL</th>
+            <th></th>
         </tr>
         {% for stud in students %}
             <tr>
@@ -39,11 +40,16 @@
                 <td>{{stud.age}}</td>
                 <td>{{stud.place}}</td>
                 <td>{{stud.email}}</td>
+                <td>
+                  <a href="" class="btn btn-info">Update</a>
+                  <a href="{% url 'delete_student' stud.id %}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         {% endfor %}
     </table>
 
-
+    <!-- <a href="reg" class="btn btn-info">Add student</a> -->
+    <a href="{% url 'register_view' %}" class="btn btn-info">Add student</a>
 
 
 
